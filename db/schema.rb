@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180306134427) do
   end
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20180306134427) do
   end
 
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "description"
-    t.decimal "hours", precision: 4, scale: 2
-    t.date "taskdate"
+    t.decimal "hours", precision: 4, scale: 2, null: false
+    t.date "taskdate", null: false
     t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

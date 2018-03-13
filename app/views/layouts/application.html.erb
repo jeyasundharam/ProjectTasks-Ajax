@@ -20,10 +20,10 @@
    <center>
 
   <% if user_signed_in? %>
-  <%= link_to "New",:controller => "projects",:action=>"insert" %>
-  <%= link_to "Show",:controller => "projects",:action=>"show" %>
-  <%= link_to "Multi tasks",:controller => "projects",:action=>"multitasks" %>
-  <%= link_to "Show All tasks",:controller => "projects",:action=>"showtasks" %>
+  <%= link_to "New", projects_insert_url %>
+  <%= link_to "Show", projects_show_url %>
+  <%= link_to "Multi tasks", projects_update_tasks_url %>
+  <%= link_to "Show All tasks", projects_showtasks_url %>
   <%= link_to "Edit profile", edit_user_registration_path %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
 <% else %>
